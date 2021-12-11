@@ -1,12 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
-body {
-    background-color: black;
-}
 #brand {
     font-family: 'Playfair Display', serif;
     font-size: 15vh;
-    color: gray;
+    color: white;
     text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
 }
 

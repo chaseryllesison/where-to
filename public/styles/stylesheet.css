@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+body {
+    background-color: black;
+}
+#brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 15vh;
+    color: gray;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+}
+
+.vr-spacer {
+    height: 20vh;
+}
+
+.btn-lg {
+    color: white;
+    border-color: white;
+    width: 200px;
+}
+
+@media only screen and (max-width: 800px) {
+    #brand {
+        font-size: 7vh;
+    }
+
+    .vr-spacer {
+        height: 16vh;
+    }
+
+}

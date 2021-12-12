@@ -1,3 +1,34 @@
 <% layout('layouts/boilerplate') %>
 
-LOGIN
+<div class="container">
+    <div class="vr-spacer"></div>
+    <div class="card mx-auto p-4 login"  style="width: 500px;">
+        <div class="card-body">
+          <h5 class="card-title">Login</h5>
+          <form action="" method="post">
+            <div class="row mb-3 text-center">
+              <label for="email" class="col-2 col-form-label"><span class="material-icons">email</span></label>
+              <div class="col-10">
+                <input type="email" class="form-control" id="email" placeholder="Email Address">
+              </div>
+            </div>
+            <div class="row mb-3 text-center">
+              <label for="password" class="col-2 col-form-label"><span class="material-icons">lock</span></label>
+              <div class="col-10">
+                <input type="password" class="form-control" id="password" placeholder="Password">
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </div>
+          </form>
+          <div class="col-12 text-center">
+            <a href="">Forgot account?</a>
+          </div>
+          <br>
+          <div class="col-12 text-center">
+            <button class="btn btn-primary btn-sm">Create New Account</button>
+          </div>
+        </div>
+      </div>
+</div>

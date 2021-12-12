@@ -5,6 +5,7 @@ const ejsMate = require('ejs-mate');
 
 //for routs
 const userRoutes = require('./routes/users');
+const blogRoutes = require('./routes/blogs');
 
 // port
 const port = process.env.PORT || 3000;
@@ -29,6 +30,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 //routs
 app.use('/', userRoutes);
+app.use('/blogs', blogRoutes);
 
 app.get('/', (req, res) => {
     res.render('landingPage');

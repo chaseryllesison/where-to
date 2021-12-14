@@ -65,5 +65,8 @@ nav > div {
     .vr-spacer {
         height: 16vh;
     }
+    .login {
+        width: 350px;
+    }
 
 }

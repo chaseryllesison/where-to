@@ -1,0 +1,29 @@
+<% layout('layouts/boilerplate') %>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-light pt-0">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="d-flex px-2" style="background-color: #519fb5;">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success custom-btn" type="submit">Search</button>
+        </form>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Write a Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span class="material-icons" data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom" data-bs-content="Logout">logout</span> 
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

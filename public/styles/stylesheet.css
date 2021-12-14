@@ -7,6 +7,23 @@
     text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
 }
 
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+nav > div {
+    background-color: #519fb5;
+    height: 10vh;
+    
+}
+
+.navbar-nav {
+    background-color: #519fb5;
+}
+
+
 .vr-spacer {
     height: 20vh;
 }
@@ -22,6 +39,16 @@
     border-color: #519fb5;
 }
 .btn-primary:hover {
+    background-color: #2e5c69;
+    border-color: #2e5c69;
+}
+
+.custom-btn {
+    color: white;
+    border-color: white;
+}
+
+.custom-btn:hover {
     background-color: #2e5c69;
     border-color: #2e5c69;
 }

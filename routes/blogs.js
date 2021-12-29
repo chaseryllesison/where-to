@@ -5,4 +5,7 @@ const blogs = require('../controllers/blogs');
 router.route('/')
     .get(blogs.blogs);
 
+router.route('/newBlog')
+    .get(blogs.newBlog);
+
 module.exports = router

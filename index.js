@@ -2,6 +2,24 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const ejsMate = require('ejs-mate');
+const mongoose = require('mongoose');
+
+main().catch(err => console.log(err));
+
+async function main() {
+  mongoose.connect('mongodb://localhost:27017/where-to');
+}
+
+const userSchema = new mongoose.Schema({
+    username: String
+});
+
+const User = mongoose.model('User', userSchema);
+
+const sampleUser = new User({ username: 'fakeuser'});
+console.log(sampleUser.username);
+
+sampleUser.save();
 
 //for routs
 const userRoutes = require('./routes/users');

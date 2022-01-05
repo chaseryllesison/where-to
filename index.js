@@ -3,20 +3,11 @@ const app = express();
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const mongoose = require('mongoose');
+const User = require('./models/user');
 
-main().catch(err => console.log(err));
+mongoose.connect('mongodb://localhost:27017/where-to');
 
-async function main() {
-  mongoose.connect('mongodb://localhost:27017/where-to');
-}
-
-const userSchema = new mongoose.Schema({
-    username: String
-});
-
-const User = mongoose.model('User', userSchema);
-
-const sampleUser = new User({ username: 'fakeuser'});
+const sampleUser = new User({ username: 'sampleUser'});
 console.log(sampleUser.username);
 
 sampleUser.save();

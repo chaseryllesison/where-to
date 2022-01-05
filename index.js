@@ -7,10 +7,8 @@ const User = require('./models/user');
 
 mongoose.connect('mongodb://localhost:27017/where-to');
 
-const sampleUser = new User({ username: 'sampleUser'});
-console.log(sampleUser.username);
-
-sampleUser.save();
+// const sampleUser = new User({ username: 'sampleUser2', email: 'sample@email.com'});
+// sampleUser.save();
 
 //for routs
 const userRoutes = require('./routes/users');

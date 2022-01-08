@@ -13,7 +13,7 @@ module.exports.registerUser = async (req, res) => {
         const { email, username, firstName, lastName, password } = req.body;
         const user = new User({ email, username, firstName, lastName});
         const registeredUser = await User.register(user, password);
-        console.log(registeredUser);
+        res.render(registeredUser);
     
     }catch(e){
         console.log('error', e);

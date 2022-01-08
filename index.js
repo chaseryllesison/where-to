@@ -4,10 +4,16 @@ const path = require('path');
 const ejsMate = require('ejs-mate');
 const mongoose = require('mongoose');
 const User = require('./models/user');
+const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
 // connect db
 mongoose.connect('mongodb://localhost:27017/where-to');
+
+// body parser
+// use body parser to easy fetch post body
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //method override
 app.use(methodOverride('_method'));
@@ -15,6 +21,10 @@ app.use(methodOverride('_method'));
 //for routs
 const userRoutes = require('./routes/users');
 const blogRoutes = require('./routes/blogs');
+
+//routs
+app.use('/', userRoutes);
+app.use('/blogs', blogRoutes);
 
 // port
 const port = process.env.PORT || 3000;
@@ -37,9 +47,6 @@ app.set('views', path.join(__dirname, 'views'));
 // app.use(methodOverride('_method'));
 
 
-//routs
-app.use('/', userRoutes);
-app.use('/blogs', blogRoutes);
 
 app.get('/', (req, res) => {
     res.render('landingPage');

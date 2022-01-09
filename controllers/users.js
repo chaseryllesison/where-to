@@ -1,4 +1,6 @@
 const User = require('../models/user');
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
 
 module.exports.loginForm = (req,res) => {
     res.render('users/login');
@@ -13,7 +15,7 @@ module.exports.registerUser = async (req, res) => {
         const { email, username, firstName, lastName, password } = req.body;
         const user = new User({ email, username, firstName, lastName});
         const registeredUser = await User.register(user, password);
-        res.render(registeredUser);
+        res.redirect('/blogs');
     
     }catch(e){
         console.log('error', e);

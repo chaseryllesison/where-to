@@ -15,6 +15,7 @@ module.exports.registerUser = async (req, res) => {
         const { email, username, firstName, lastName, password } = req.body;
         const user = new User({ email, username, firstName, lastName});
         const registeredUser = await User.register(user, password);
+        req.flash('success', 'Welcome to Where-to!');
         res.redirect('/blogs');
     
     }catch(e){

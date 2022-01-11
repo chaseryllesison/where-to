@@ -12,4 +12,4 @@ router.route('/register')
     .get(users.registrationForm)
     .post(users.registerUser);
 
-module.exports = router
+module.exports = router;

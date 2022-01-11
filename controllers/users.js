@@ -22,5 +22,10 @@ module.exports.registerUser = async (req, res) => {
     }
 }
 
+module.exports.login = (req, res) => {
+    const redirectURL = req.session.returnTo || '/blogs';
+    delete req.session.returnTo;
+    res.redirect(redirectURL);
+}
 // const sampleUser = new User({ username: 'sampleUser2', email: 'sample@email.com', firstName: 'sam', lastName: 'samplee'});
 // sampleUser.save();

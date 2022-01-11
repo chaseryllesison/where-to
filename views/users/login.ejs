@@ -5,17 +5,17 @@
     <div class="card mx-auto p-4 mt-5 login">
         <div class="card-body">
           <h5 class="card-title">Login</h5>
-          <form action="/blogs" method="get">
+          <form action="/login" method="post">
             <div class="row mb-3 text-center">
-              <label for="email" class="col-2 col-form-label"><span class="material-icons">email</span></label>
+              <label for="username" class="col-2 col-form-label"><span class="material-icons">badge</span></label>
               <div class="col-10">
-                <input type="email" class="form-control" id="email" placeholder="Email Address">
+                <input type="username" class="form-control" id="username" placeholder="Username" name="username">
               </div>
             </div>
             <div class="row mb-3 text-center">
               <label for="password" class="col-2 col-form-label"><span class="material-icons">lock</span></label>
               <div class="col-10">
-                <input type="password" class="form-control" id="password" placeholder="Password">
+                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
               </div>
             </div>
             <div class="col-12">

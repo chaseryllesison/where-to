@@ -5,17 +5,29 @@
     <div class="card mx-auto p-4 mt-5 login">
         <div class="card-body">
           <h5 class="card-title">Login</h5>
-          <form action="/login" method="post">
+          <form action="/login" method="post" class="needs-validation" novalidate>
             <div class="row mb-3 text-center">
               <label for="username" class="col-2 col-form-label"><span class="material-icons">badge</span></label>
               <div class="col-10">
-                <input type="username" class="form-control" id="username" placeholder="Username" name="username">
+                <input type="username" class="form-control" id="username" placeholder="Username" name="username" required>
+                <div class="valid-feedback text-start">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback text-start">
+                  Username Required
+                </div>
               </div>
             </div>
             <div class="row mb-3 text-center">
               <label for="password" class="col-2 col-form-label"><span class="material-icons">lock</span></label>
               <div class="col-10">
-                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+                <div class="valid-feedback text-start">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback text-start">
+                  Password Required
+                </div>
               </div>
             </div>
             <div class="col-12">
@@ -37,3 +49,4 @@
       </div>
 </div>
 
+<script src="/scripts/validateForm.js"></script>

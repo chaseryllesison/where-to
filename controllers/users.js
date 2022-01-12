@@ -24,6 +24,7 @@ module.exports.registerUser = async (req, res) => {
 }
 
 module.exports.login = (req, res) => {
+    req.flash('success', 'Welcome back to Where-to!');
     const redirectURL = req.session.returnTo || '/blogs';
     delete req.session.returnTo;
     res.redirect(redirectURL);

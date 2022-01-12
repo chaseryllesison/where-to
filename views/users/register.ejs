@@ -6,41 +6,59 @@
     <div class="card mx-auto px-4 login">
         <div class="card-body">
           <h5 class="card-title">Register</h5>
-          <form action="/register" method="POST">
+          <form action="/register" method="POST" class="needs-validation" novalidate>
             <div class="row mb-3 text-center">
-              <label for="email" class="col-2 col-form-label"><span class="material-icons">email</span></label>
+              <label for="email" class="col-2 form-label col-form-label"><span class="material-icons">email</span></label>
               <div class="col-10">
-                <input type="email" class="form-control" id="email" placeholder="Enter Your Email Address" name="email">
+                <input type="email" class="form-control" id="email" placeholder="Enter Your Email Address" name="email" required>
+                <div class="valid-feedback text-start">
+                  Looks good!
+                </div>
               </div>
             </div>
             <div class="row mb-3 text-center">
               <label for="username" class="col-2 col-form-label"><span class="material-icons">badge</span></label>
               <div class="col-10">
-                <input type="username" class="form-control" id="username" placeholder="Enter a Unique Username" name="username">
+                <input type="username" class="form-control" id="username" placeholder="Enter a Unique Username" name="username" required>
+                <div class="valid-feedback text-start">
+                  Looks good!
+                </div>
               </div>
             </div>
             <div class="row mb-3 text-center">
               <label for="firstName" class="col-2 col-form-label"><span class="material-icons">person</span></label>
               <div class="col-10">
-                <input type="text" class="form-control" id="firstName" placeholder="Enter Your First Name" name="firstName">
+                <input type="text" class="form-control" id="firstName" placeholder="Enter Your First Name" name="firstName" required>
+                <div class="valid-feedback text-start">
+                  Looks good!
+                </div>
               </div>
             </div>
             <div class="row mb-3 text-center">
               <label for="lastName" class="col-2 col-form-label"><span class="material-icons">person</span></label>
               <div class="col-10">
-                <input type="text" class="form-control" id="lastName" placeholder="Enter Your Last Name" name="lastName">
+                <input type="text" class="form-control" id="lastName" placeholder="Enter Your Last Name" name="lastName" required>
+                <div class="valid-feedback text-start">
+                  Looks good!
+                </div>
               </div>
             </div>
             <div class="row mb-3 text-center">
               <label for="password" class="col-2 col-form-label"><span class="material-icons">lock</span></label>
               <div class="col-10">
-                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+                <div class="valid-feedback text-start">
+                  Looks good!
+                </div>
               </div>
             </div>
             <div class="row mb-3 text-center">
               <label for="confirmPassword" class="col-2 col-form-label"><span class="material-icons">lock</span></label>
               <div class="col-10">
-                <input type="password" class="form-control" id="confirmPassword" placeholder="Re-enter Password">
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Re-enter Password" required>
+                <div class="valid-feedback text-start">
+                  Looks good!
+                </div>
               </div>
             </div>
             <div class="col-12">
@@ -55,3 +73,5 @@
         </div>
       </div>
 </div>
+
+<script src="/scripts/validateForm.js"></script>

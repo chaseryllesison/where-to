@@ -12,4 +12,6 @@ router.route('/register')
     .get(users.registrationForm)
     .post(users.registerUser);
 
+router.get('/logout', users.logout);
+
 module.exports = router;

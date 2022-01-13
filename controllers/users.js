@@ -31,3 +31,8 @@ module.exports.login = (req, res) => {
 }
 // const sampleUser = new User({ username: 'sampleUser2', email: 'sample@email.com', firstName: 'sam', lastName: 'samplee'});
 // sampleUser.save();
+
+module.exports.logout = (req, res) => {
+    req.logout();
+    res.redirect('/');
+}

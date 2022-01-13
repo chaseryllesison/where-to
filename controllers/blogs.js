@@ -1,3 +1,5 @@
+const Blog = require('../models/blogs');
+
 module.exports.blogs = (req, res) => {
     res.render('blogs/blogs');
 }
@@ -8,5 +10,6 @@ module.exports.newBlogForm = (req, res) => {
 }
 
 module.exports.newBlog = (req, res) => {
-    res.send('ROUTED');
+    console.log(req.user._id);
+    res.send(req.body);
 }

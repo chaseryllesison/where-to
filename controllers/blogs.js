@@ -10,6 +10,10 @@ module.exports.newBlogForm = (req, res) => {
 }
 
 module.exports.newBlog = (req, res) => {
-    console.log(req.user._id);
-    res.send(req.body);
+    const { title, blogContent } = req.body;
+    const blog = new Blog({ title, blogContent});
+    blog.author = req.user._id;
+    blog.save();
+    console.log(blog);
+    res.send(blog);
 }

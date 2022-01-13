@@ -12,7 +12,7 @@ const BlogSchema = new Schema ({
     },
     location: {
         type: String,
-        required: true
+        // required: true
     },
     blogContent: {
         type: String,

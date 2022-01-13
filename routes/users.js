@@ -6,7 +6,7 @@ const users = require('../controllers/users');
 
 router.route('/login')
     .get(users.loginForm)
-    .post(passport.authenticate('local', { failureRedirect: '/login' }), users.login);
+    .post(passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }), users.login);
 
 router.route('/register')
     .get(users.registrationForm)

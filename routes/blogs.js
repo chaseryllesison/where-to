@@ -6,6 +6,7 @@ router.route('/')
     .get(blogs.blogs);
 
 router.route('/newBlog')
-    .get(blogs.newBlog);
+    .get(blogs.newBlogForm)
+    .post(blogs.newBlog);
 
 module.exports = router

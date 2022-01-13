@@ -4,25 +4,21 @@
 <div class="container">
     <div class="card mx-auto p-4 mt-5 login">
         <div class="card-body">
-        <h5 class="card-title text-center">Write a New Blog</h5>
-            <form action="/blogs" method="get">
+        <h5 class="card-title text-center">Write a New Post</h5>
+            <form action="/blogs/newBlog" method="POST">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Blog Title</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1">
+                    <input type="text" class="form-control" id="exampleFormControlInput1">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Content</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
+                <br>
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary btn-sm">Publish Post</button>
+                </div>
             </form>
-            <br>
-            <div class="col-12 text-center">
-                <a href="/register">
-                    <button class="btn btn-primary btn-sm">Create New Account</button>
-                </a>
-            </div>
         </div>
     </div>
 </div>
-
-<script src="https://unpkg.com/vue-upload-multiple-image@1.1.6/dist/vue-upload-multiple-image.js"></script>

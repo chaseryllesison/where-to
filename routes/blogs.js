@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const blogs = require('../controllers/blogs');
+const catchAsync = require('../utils/catchAsync');
 
 router.route('/')
     .get(blogs.blogs);
 
 router.route('/newBlog')
     .get(blogs.newBlogForm)
-    .post(blogs.newBlog);
+    .post(catchAsync(blogs.newBlog));
 
 module.exports = router

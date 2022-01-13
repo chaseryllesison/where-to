@@ -9,11 +9,11 @@ module.exports.newBlogForm = (req, res) => {
     res.render('blogs/newBlog');
 }
 
-module.exports.newBlog = (req, res) => {
+module.exports.newBlog = async (req, res) => {
     const { title, blogContent } = req.body;
     const blog = new Blog({ title, blogContent});
     blog.author = req.user._id;
-    blog.save();
+    await blog.save();
     console.log(blog);
     res.send(blog);
 }

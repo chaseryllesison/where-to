@@ -1,7 +1,7 @@
 const Blog = require('../models/blogs');
 
 module.exports.blogs = async (req, res) => {
-    const blogs = await Blog.find({});
+    const blogs = await Blog.find({}).populate('author');
     res.render('blogs/blogs', {blogs});
 }
 

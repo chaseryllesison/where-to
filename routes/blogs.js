@@ -4,7 +4,7 @@ const blogs = require('../controllers/blogs');
 const catchAsync = require('../utils/catchAsync');
 
 router.route('/')
-    .get(blogs.blogs);
+    .get(catchAsync(blogs.blogs));
 
 router.route('/newBlog')
     .get(blogs.newBlogForm)

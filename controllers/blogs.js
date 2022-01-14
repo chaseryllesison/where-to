@@ -1,7 +1,8 @@
 const Blog = require('../models/blogs');
 
-module.exports.blogs = (req, res) => {
-    res.render('blogs/blogs');
+module.exports.blogs = async (req, res) => {
+    const blogs = await Blog.find({});
+    res.render('blogs/blogs', {blogs});
 }
 
 module.exports.newBlogForm = (req, res) => {

@@ -1,17 +1,20 @@
 <% layout('layouts/boilerplate') %>
 <%- include('../partials/navbar') %>
 <%- include('../partials/flash') %>
+<script>
+  console.log(locals.currentUser);
+</script>
 <div class="container">
-<h1>Blogs</h1>
+<h1></h1>
   <% for(let blog of blogs) { %>
     <div class="card mb-4 mx-auto" style="max-width: 600px;">
         <img src="https://www.hilton.com/im/en/NoHotel/15196649/shutterstock-1041475570.jpg?impolicy=crop&cw=4541&ch=3333&gravity=NorthWest&xposition=229&yposition=0&rw=582&rh=427" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title"><%= blog.title %></h5>
           <p class="card-text">
-          <small>Location: <%= blog.location %></small>
+          <small class="text-muted"><%= blog.location %></small>
           <br>
-          <small class="text-muted">By: <%= blog.author.username %></small>
+          <small>By: <%= blog.author.username %></small>
         </p>
         <p class="card-text"><%= blog.blogContent %></p>
       </div>

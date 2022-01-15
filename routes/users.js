@@ -3,6 +3,7 @@ const passport = require('passport');
 const router = express.Router();
 const users = require('../controllers/users');
 const catchAsync = require('../utils/catchAsync');
+// const { isLoggedIn } = require('../middleware.js');
 
 router.route('/login')
     .get(users.loginForm)

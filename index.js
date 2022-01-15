@@ -33,6 +33,13 @@ const sessionConfig = {
 app.use(session(sessionConfig));
 app.use(flash());
 
+//for passport
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 //middleware to access success so we don't have to pass flash to our tamplates because we allways have access to it
 app.use((req, res, next) => {
     res.locals.currentUser = req.user;
@@ -41,12 +48,14 @@ app.use((req, res, next) => {
     next();
 })
 
-//for passport
-app.use(passport.initialize());
-app.use(passport.session());
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+//passes logged in username for navbar
+// app.use((req, res, next) => {
+//     if(req.isAuthenticated()){
+//         var isLoggedIn = true;
+//         var user = req.user;
+//     }
+//     next();
+// })
 
 //method override
 app.use(methodOverride('_method'));

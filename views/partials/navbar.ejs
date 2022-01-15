@@ -1,5 +1,6 @@
 <% layout('layouts/boilerplate') %>
 
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-light pt-0 pb-0">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Where To</a>
@@ -18,8 +19,14 @@
           <li class="nav-item">
             <a class="nav-link" href="/blogs/newBlog">Write a Post</a>
           </li>
+          <% if(currentUser) { %>
+          <li class="nav-item">
+            <a class="nav-link" href=""><%= currentUser.username %></a>
+          </li>
+          <% } %>
           <li class="nav-item">
               <a class="nav-link" href="/logout">
+                
                 <span class="material-icons" data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom" data-bs-content="Logout">logout</span> 
               </a>
           </li>

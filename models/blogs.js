@@ -10,9 +10,24 @@ const BlogSchema = new Schema ({
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    location: {
+    placeName: {
         type: String,
-        // required: true
+        required: true
+    },
+    address: {
+        type: String,
+        required: true
+    },
+    geometry: {
+        type: {
+            coordinates: {
+                type: [Number],
+                required: true
+            },
+            type: String,
+            enum: ['Point'],
+            required: true
+        },
     },
     blogContent: {
         type: String,

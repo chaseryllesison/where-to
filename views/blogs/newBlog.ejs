@@ -1,6 +1,15 @@
 <% layout('layouts/boilerplate') %>
 <%- include('../partials/navbar') %> 
 
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+
+<style>
+    .mapboxgl-ctrl-geocoder {
+        min-width: 100%;
+    }
+</style>
 <div class="container">
     <div class="card mx-auto p-4 mt-5 login">
         <div class="card-body">
@@ -9,6 +18,16 @@
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Title</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" name="title">
+                </div>
+                <div class="mb-3">
+                    <label for="placeName" class="form-label">Place Name</label>
+                    <input type="text" class="form-control" id="placeName" name="placeName">
+                </div>
+                <div class="mb-3">
+                    <label for="geocoder" class="form-label">Location</label>
+                    <div id="geocoder"></div>
+                    <input type="text" id="address" name="address" style="display: none;">
+                    <input type="text" name="geometry" id="geometry" style="display: none;">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Content</label>
@@ -22,3 +41,5 @@
         </div>
     </div>
 </div>
+
+<script src="/scripts/mapbox.js"></script>

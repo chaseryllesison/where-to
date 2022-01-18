@@ -12,11 +12,15 @@ module.exports.newBlogForm = (req, res) => {
 }
 
 module.exports.newBlog = async (req, res) => {
-    const { title, placeName, address, blogContent } = req.body;
-    const geometry = JSON.parse(req.body.geometry);
-    const blog = new Blog({ title, placeName, address, geometry, blogContent });
-    blog.author = req.user._id;
-    await blog.save();
-    // console.log(blog);
-    res.send(blog);
+    try {
+        const { title, placeName, address, blogContent } = req.body;
+        const geometry = JSON.parse(req.body.geometry);
+        const blog = new Blog({ title, placeName, address, geometry, blogContent });
+        blog.author = req.user._id;
+        await blog.save();
+        req.flash('success', 'Successfully posted!');
+        res.redirect('/blogs');
+    }catch(e){
+        console.log('error', e);
+    }
 }

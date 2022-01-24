@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap');
 
 #brand {
     font-family: 'Playfair Display', serif;
@@ -72,6 +73,24 @@ footer {
     text-align: center;
 }
 
+#imagePreview {
+    background-color: #ebecf0;
+}
+
+.img-thumbnail-preview {
+    background-size: cover;
+    background-position: center;
+    height: 20vh;
+    width: 30vh;
+    border-width: 2px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.img-thumbnail-preview:hover {
+    background-color: black;
+}
+
 @media only screen and (max-width: 800px) {
     #brand {
         font-size: 7vh;
@@ -85,3 +104,22 @@ footer {
     }
 
 }
+
+.mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+}
+
+button:focus,
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+

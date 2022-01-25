@@ -14,7 +14,7 @@
     <div class="card mx-auto p-4 mt-5 login">
         <div class="card-body">
         <h5 class="card-title text-center">Write a New Post</h5>
-            <form action="/blogs/newBlog" method="POST">
+            <form action="/blogs/newBlog" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Title</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" name="title">
@@ -30,7 +30,7 @@
                     <input type="text" name="geometry" id="geometry" style="display: none;">
                 </div>
                 <div class="input-group">
-                    <input type="file" class="form-control" id="imageInput" multiple>
+                    <input type="file" class="form-control" id="imageInput" name="images" multiple>
                 </div>
                 <div class="mb-3 mx-auto container row d-flex justify-content-around" id="imagePreview">
                 </div>

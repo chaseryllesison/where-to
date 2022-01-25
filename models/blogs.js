@@ -1,6 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const opts = { toJSON: { virtuals: true }};
+
+const ImageSchema = new Schema({
+    url: String,
+    filename: String
+});
+
+ImageSchema.virtual('thumbnail').get(function () {
+    return this.url.replace('/upload', '/upload/w_200');
+});
+
 const BlogSchema = new Schema ({
     title: {
         type: String,
@@ -18,6 +29,7 @@ const BlogSchema = new Schema ({
         type: String,
         required: true
     },
+    images: [ImageSchema],
     geometry: {
         type: {
             coordinates: {

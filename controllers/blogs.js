@@ -1,5 +1,16 @@
+require('dotenv').config();
 const Blog = require('../models/blogs');
 
+// cloudinary.uploader
+//     .upload('./Campground.jpeg', {
+//         resource_type: 'image',
+//     })
+//     .then((result) => {
+//         console.log("Success", JSON.stringify(result, null, 2));
+//     })
+//     .catch((error) => {
+//         console.log("Error", JSON.stringify(result, null, 2));
+//     })
 
 module.exports.blogs = async (req, res) => {
     const blogs = await Blog.find({}).populate('author');

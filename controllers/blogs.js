@@ -28,6 +28,7 @@ module.exports.newBlog = async (req, res) => {
         const geometry = JSON.parse(req.body.geometry);
         const blog = new Blog({ title, placeName, address, geometry, blogContent });
         blog.author = req.user._id;
+        blog.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
         await blog.save();
         req.flash('success', 'Successfully posted!');
         res.redirect('/blogs');

@@ -29,6 +29,7 @@ module.exports.newBlog = async (req, res) => {
         const blog = new Blog({ title, placeName, address, geometry, blogContent });
         blog.author = req.user._id;
         blog.images = req.files.map(f => ({ url: f.path, filename: f.filename }));
+        blog.datePosted = new Date();
         await blog.save();
         req.flash('success', 'Successfully posted!');
         res.redirect('/blogs');

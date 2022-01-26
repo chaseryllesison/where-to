@@ -91,6 +91,19 @@ footer {
     background-color: black;
 }
 
+.mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+}
+
+.img-item{
+    overflow: hidden;
+    height: 350px;
+}
+
+.img-item > img {
+    height: 350px;
+    object-fit: cover;
+}
 @media only screen and (max-width: 800px) {
     #brand {
         font-size: 7vh;
@@ -102,24 +115,14 @@ footer {
     .login {
         width: 350px;
     }
+    .img-item{
+        overflow: hidden;
+        height: 250px;
+    }
+    
+    .img-item > img {
+        height: 250px;
+        object-fit: cover;
+    }
 
 }
-
-.mapboxgl-ctrl-geocoder {
-    min-width: 100%;
-}
-
-button:focus,
-input:focus {
-  outline: none;
-  box-shadow: none;
-}
-a,
-a:hover {
-  text-decoration: none;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-}
-

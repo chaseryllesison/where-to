@@ -44,6 +44,9 @@ const BlogSchema = new Schema ({
     blogContent: {
         type: String,
         required: true
+    },
+    datePosted: {
+        type: Date
     }
 });
 

@@ -1,11 +1,20 @@
 <% layout('layouts/boilerplate') %>
 <%- include('../partials/navbar') %>
 <%- include('../partials/flash') %>
-<div class="container">
+
+<link rel="stylesheet" href="/styles/cardStyle.css">
+
+<div class="container row mx-auto">
 <h1></h1>
-  <% for(let blog of blogs) { %>
+  <!-- <% for(let blog of blogs) { %>
     <div class="card mb-4 mx-auto" style="max-width: 600px;">
-        <img src="https://www.hilton.com/im/en/NoHotel/15196649/shutterstock-1041475570.jpg?impolicy=crop&cw=4541&ch=3333&gravity=NorthWest&xposition=229&yposition=0&rw=582&rh=427" class="card-img-top" alt="...">
+      <div class="img-item">
+        <% if(blog.images.length){ %>
+          <img src="<%= blog.images[0].url%>" alt="" class="card-img-top">
+        <% } else {%>
+          <img src="https://www.hilton.com/im/en/NoHotel/15196649/shutterstock-1041475570.jpg?impolicy=crop&cw=4541&ch=3333&gravity=NorthWest&xposition=229&yposition=0&rw=582&rh=427" class="card-img-top" alt="...">
+        <% } %>
+      </div>
       <div class="card-body">
         <h5 class="card-title"><%= blog.title %></h5>
         <p class="card-text"><%= blog.placeName %>
@@ -17,5 +26,40 @@
         </p>
       </div>
     </div>
-  <% } %>
+  <% } %> -->
+ <% const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; %>
+  <% for(let blog of blogs) { %>
+    <div class="example-2 card mx-auto col-sm-12 col-md-6 col-lg-4 m-2">
+      <% if(blog.images.length){ %>
+        <div class="wrapper" style="background: url(<%= blog.images[0].url %>); background-size: cover;
+          background-position: center;">
+      <% } else { %>
+        <div class="wrapper" style="background: url(https://www.hilton.com/im/en/NoHotel/15196649/shutterstock-1041475570.jpg?impolicy=crop&cw=4541&ch=3333&gravity=NorthWest&xposition=229&yposition=0&rw=582&rh=427); background-size: cover;
+        background-position: center;">
+      <% } %>
+        <div class="header">
+          <div class="date">
+            <span class="day"><%= blog.datePosted.getDate()%></span>
+            <span class="month"><%= months[blog.datePosted.getMonth()] %></span>
+            <span class="year"><%= blog.datePosted.getFullYear() %></span>
+          </div>
+          <ul class="menu-content">
+            <li>
+              <a href="#" class="fa fa-bookmark-o"></a>
+            </li>
+            <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+            <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+          </ul>
+        </div>
+        <div class="data">
+          <div class="content">
+            <span class="author"><%= blog.author.username %></span>
+            <h1 class="title"><a href="#"><%= blog.title %></a></h1>
+            <p class="text"><%= blog.placeName %><br><%= blog.address %></p>
+            <a href="#" class="button">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>
 </div>

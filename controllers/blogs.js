@@ -37,3 +37,7 @@ module.exports.newBlog = async (req, res) => {
         console.log('error', e);
     }
 }
+
+module.exports.showBlog = async(req, res) => {
+    res.send("routed");
+}

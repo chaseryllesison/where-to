@@ -13,4 +13,7 @@ router.route('/newBlog')
     .get(blogs.newBlogForm)
     .post(upload.array('images'), catchAsync(blogs.newBlog));
 
+router.route('/:id')
+    .get(blogs.showBlog);
+
 module.exports = router

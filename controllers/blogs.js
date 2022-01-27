@@ -32,12 +32,17 @@ module.exports.newBlog = async (req, res) => {
         blog.datePosted = new Date();
         await blog.save();
         req.flash('success', 'Successfully posted!');
-        res.redirect('/blogs');
+        res.redirect('/');
     }catch(e){
         console.log('error', e);
     }
 }
 
 module.exports.showBlog = async(req, res) => {
-    res.send("routed");
+    const blog = await Blog.findById(req.params.id).populate('author');
+    if(!blog){
+        req.flash('error', 'Cannot find post');
+        res.redirect('/blogs')
+    }
+    res.render('blogs/showBlog', {blog});
 }

@@ -1,31 +1,56 @@
 <% layout('layouts/boilerplate') %>
 <%- include('../partials/navbar') %>
 <%- include('../partials/flash') %>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
 
-<h1><%= blog.title %></h1>
-<div class="container">
-    <div id="carouselExampleIndicators" class="carousel slide col-xxl-8 col-xl-8 col-md-10 col-sm-10 col-xs-12 mx-auto" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <% blog.images.forEach((img, i) => { %>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%=i%>" class="<%= i===0 ? 'active' : '' %>" <%= i===0 ? 'aria-current="true"' : '' %> aria-label="Slide <%=i%>"></button>
-          <% }) %>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <div id="carouselExampleIndicators" class="carousel slide mb-2" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <% blog.images.forEach((img, i) => { %>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%=i%>" class="<%= i===0 ? 'active' : '' %>" <%= i===0 ? 'aria-current="true"' : '' %> aria-label="Slide <%=i%>"></button>
+            <% }) %>
+          </div>
+          <div class="carousel-inner">
+            <% blog.images.forEach((img, i) => { %>
+              <div class="carousel-item <%= i===0 ? 'active' : '' %>">
+                <img src="<%=img.url%>" class="d-block w-100" alt="">
+              </div>
+            <% }) %>
+          </div>
+          <% if(blog.images.length > 1) { %>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          <% } %>
         </div>
-        <div class="carousel-inner">
-          <% blog.images.forEach((img, i) => { %>
-            <div class="carousel-item <%= i===0 ? 'active' : '' %>">
-              <img src="<%=img.url%>" class="d-block w-100" alt="">
-            </div>
-          <% }) %>
+      <p><%= blog.placeName %> - <span class="text-muted" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMap" aria-expanded="false" aria-controls="collapseMap"><%= blog.address %></span></p>
+      <div class="collapse" id="collapseMap">
+        <div class="card card-body">
+          <img src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/<%=blog.geometry.coordinates%>,10,0,0/400x400?access_token=pk.eyJ1IjoiY2hhc2VyeWxsZSIsImEiOiJja3ZtbnJuNTY2cTBoMm5xMTRqcXN0MmF4In0.-opw4esb5sDzKTkkMQ8NOg" alt="">
         </div>
-        <% if(blog.images.length > 1) { %>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        <% } %>
       </div>
+    </div>
+      <div class="col-sm-12 col-md-6">
+        <h1 style="color: #519fb5;"><%= blog.title %></h1>
+        <div id="post-content">
+          <p>
+            <%= blog.blogContent %>
+          </p>
+
+        </div>
+        </div>
+      </div>
+      <div id="comment-section" class="col-sm-12 col-md-6">
+        comments here
+      </div>
+      <!-- <div id="map" class="col-sm-12 col-md-6"></div> -->
+    </div>
 </div>

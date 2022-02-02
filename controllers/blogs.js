@@ -32,7 +32,7 @@ module.exports.newBlog = async (req, res) => {
         blog.datePosted = new Date();
         await blog.save();
         req.flash('success', 'Successfully posted!');
-        res.redirect('/');
+        res.redirect('/blogs');
     }catch(e){
         console.log('error', e);
     }
